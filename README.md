@@ -1,3 +1,30 @@
+Welcome to Fikr Lab's "Let's Build Something Together" day.  This is the gilded rose exercise - an open source kata (problem solved repeatedly to practice and improve our development skills).  
+
+Here are the ground rules:
+
+  - You and your teammates will work together to improve this sofware and build upon it.
+  - Attending this session with you will be one or more people from Fikr.  Consider them as "external consultants".  When you get stuck you can go to them.  
+  - There will also be one "business owner" who you can go to for clarifications about the requirements.  
+
+
+Here are our requirements:
+
+  - We want to create a user interface.
+  - We also want to add new features.
+  - And, of course, we want the quality of the code improved because we've had problems in the past with bugs delivered to our client.
+  
+  
+And here are a few constraints:
+
+  - At any time you can get a 30 minute warning, and within those 30 minutes you must wrap up the work and prepare to "deliver to the client". 
+  - "Delivering to the client" includes a demo of the software and a review of the code in github (not on your local machine).
+  - Unlike most interviews where you are evaluated on your individual work, this one is a little different.  You will be evaluated on a shared piece of work.  Therefore the entire team succeeds and fails together.
+  
+---------
+Here are the requirements of the problem at hand.
+
+
+
 Hi and welcome to team Gilded Rose.
 
 As you know, we are a small inn with a prime location in a prominent city ran
