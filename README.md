@@ -1,4 +1,4 @@
-Welcome to Fikr Lab's "Let's Build Something Together" day.  This is the gilded rose exercise - an open source kata (problem solved repeatedly to practice and improve our development skills).  
+Welcome to Devsquads's "Let's Build Something Together" day.  This is the gilded rose exercise - an open source kata (problem solved repeatedly to practice and improve our development skills).  
 
 Here are the ground rules:
 
