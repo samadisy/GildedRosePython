@@ -3,7 +3,7 @@ Welcome to Devsquads's "Let's Build Something Together" day.  This is the gilded
 Here are the ground rules:
 
   - You and your teammates will work together to improve this sofware and build upon it.
-  - Attending this session with you will be one or more people from Fikr.  Consider them as "external consultants".  When you get stuck you can go to them.  
+  - Attending this session with you will be one or more people from Devsquads.  Consider them as "external consultants".  When you get stuck you can go to them.  
   - There will also be one "business owner" who you can go to for clarifications about the requirements.  
 
 
