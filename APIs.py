@@ -20,9 +20,12 @@ def addItem():
         quality = request.form['quality']
         newItem = Item(name, sell_in, quality)
         Items.append(newItem)
-        return '''<h1>The Name value is: {}</h1>
-                  <h1>The Sellin value is: {}</h1>
-                  <h1>The quality value is: {}</h1>'''.format(newItem.name, newItem.sell_in, newItem.quality)
+        current_data = []
+
+        for item in Items:
+            current_data.append({"name": item.name, "sell_in": item.sell_in, "quality": item.quality})
+
+        return render_template("index.html", data=current_data)
 
 
 @app.route("/")

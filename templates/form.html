@@ -24,24 +24,46 @@
     <script type="text/javascript"
             src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.14.0/js/mdb.min.js"></script>
 </head>
-<body>
+<script>
+function validation() {
+  let currentName, currentSell, currentQuality;
 
+  // Get the value of the input field with id="numb"
+  currentName = document.getElementById("name").value;
+  currentSell = document.getElementById("sell_in").value;
+  currentQuality = document.getElementById("quality").value;
+
+  // If x is Not a Number or less than one or greater than 10
+  if (isNaN(x) || x < 1 || x > 10) {
+    text = "Input not valid";
+  } else {
+    text = "Input OK";
+  }
+  document.getElementById("demo").innerHTML = text;
+}
+</script>
+
+<body>
+<button>
+    <a href="/">
+        Go To Home
+    </a>
+</button>
 <form class="text-center border border-light p-5" action="{{ url_for('addItem') }}" method="post">
     <p class="h4 mb-4">Enter Data</p>
     <div class="form-group">
         <label for="name">Name</label>
-        <input class="form-control mb-4" placeholder="Name" type="text" name="name" id="name">
+        <input class="form-control mb-4" placeholder="Name" type="text" name="name" id="name" required>
     </div>
 
     <div class="form-group">
         <label for="sell_in">Sell In</label>
-        <input class="form-control mb-4" placeholder="Sell In" type="number" name="sell_in" id="sell_in">
+        <input class="form-control mb-4" placeholder="Sell In" type="number" name="sell_in" id="sell_in" required>
     </div>
     <div class="form-group">
         <label for="quality">Quality</label>
-        <input class="form-control mb-4" placeholder="Quality" type="number" name="quality" id="quality">
+        <input class="form-control mb-4" placeholder="Quality" type="number" name="quality" id="quality" required>
     </div>
-
     <button class="btn btn-info btn-block my-4" type="submit">Add Item</button>
 </form>
 </body>
