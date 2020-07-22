@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Form</title>
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
+    <!-- Google Fonts -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap">
+    <!-- Bootstrap core CSS -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Material Design Bootstrap -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.14.0/css/mdb.min.css" rel="stylesheet">
+    <!-- JQuery -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <!-- Bootstrap tooltips -->
+    <script type="text/javascript"
+            src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.4/umd/popper.min.js"></script>
+    <!-- Bootstrap core JavaScript -->
+    <script type="text/javascript"
+            src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.4.1/js/bootstrap.min.js"></script>
+    <!-- MDB core JavaScript -->
+    <script type="text/javascript"
+            src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.14.0/js/mdb.min.js"></script>
+</head>
+<body>
+
+<form class="text-center border border-light p-5" action="{{ url_for('addItem') }}" method="post">
+    <p class="h4 mb-4">Enter Data</p>
+    <div class="form-group">
+        <label for="name">Name</label>
+        <input class="form-control mb-4" placeholder="Name" type="text" name="name" id="name">
+    </div>
+
+    <div class="form-group">
+        <label for="sell_in">Sell In</label>
+        <input class="form-control mb-4" placeholder="Sell In" type="number" name="sell_in" id="sell_in">
+    </div>
+    <div class="form-group">
+        <label for="quality">Quality</label>
+        <input class="form-control mb-4" placeholder="Quality" type="number" name="quality" id="quality">
+    </div>
+
+    <button class="btn btn-info btn-block my-4" type="submit">Add Item</button>
+</form>
+</body>
+</html>
