@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+from datetime import datetime
 
 class GildedRose():
 
@@ -25,7 +26,13 @@ class GildedRose():
                         if self.quality < 50:
                             self.quality = self.quality + 1
         if self.name != "Sulfuras, Hand of Ragnaros":
-            self.sell_in = self.sell_in - 1
+            if self.name == "Aged Brie" or self.name == "Backstage passes to a TAFKAL80ETC concert":
+                if 5 < self.sell_in <= 10:
+                    self.quality = self.quality + 2
+                if 0 < self.sell_in <= 5:
+                    self.quality = self.quality + 3
+            if self.sell_in > 0:
+                self.sell_in = self.sell_in - 1
         if self.sell_in < 0:
             if self.name != "Aged Brie":
                 if self.name != "Backstage passes to a TAFKAL80ETC concert":
