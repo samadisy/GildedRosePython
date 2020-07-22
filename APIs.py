@@ -1,10 +1,10 @@
 from flask import Flask, request, jsonify, Response, render_template
 import json
-from gilded_rose import Item
+from gilded_rose import Item, GildedRose
 
 app = Flask(__name__)
 
-Items = []
+current_data = []
 
 
 @app.route("/adding")
@@ -18,23 +18,26 @@ def addItem():
         name = request.form['name']
         sell_in = request.form['sell_in']  # if key doesn't exist, returns a 400, bad request error
         quality = request.form['quality']
-        newItem = Item(name, sell_in, quality)
-        Items.append(newItem)
-        current_data = []
-
-        for item in Items:
-            current_data.append({"name": item.name, "sell_in": item.sell_in, "quality": item.quality})
+        # newItem = Item(name, sell_in, quality)
+        # Items.append(newItem)
+        current_data.append({"name": name, "sell_in": sell_in, "quality": quality})
 
         return render_template("index.html", data=current_data)
 
 
 @app.route("/")
 def getItems():
-    current_data = []
+    return render_template("index.html", data=current_data)
 
-    for item in Items:
-        current_data.append({"name": item.name, "sell_in": item.sell_in, "quality": item.quality})
 
+@app.route('/update/<index>', methods=["POST"])
+def update(index):
+    newObj = current_data[int(index) - 1]
+    print(newObj)
+    updatedObj = GildedRose(newObj)
+    updatedObj.update_quality()
+    current_data[int(index) - 1] = {"name": updatedObj.name, "sell_in": updatedObj.sell_in,
+                                    "quality": updatedObj.quality}
     return render_template("index.html", data=current_data)
 
 

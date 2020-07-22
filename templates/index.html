@@ -38,15 +38,22 @@
         <th scope="col">Name</th>
         <th scope="col">Sell In</th>
         <th scope="col">Quality</th>
+        <th scope="col"> Update Item</th>
     </tr>
     </thead>
     <tbody>
     {% for item in data %}
     <tr>
-        <th scope="row"></th>
+        <th scope="row">{{loop.index}}</th>
         <td>{{item.name}}</td>
         <td>{{item.sell_in}}</td>
         <td>{{item.quality}}</td>
+        <td>
+            <form action="{{ url_for('update', index = loop.index)}}" method="post">
+                <button class="btn btn-success my-4" name="updateBtn" type="submit"></button>
+            </form>
+        </td>
+
     </tr>
     {% endfor %}
 

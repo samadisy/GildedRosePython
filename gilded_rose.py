@@ -1,39 +1,42 @@
 # -*- coding: utf-8 -*-
 
-class GildedRose(object):
+class GildedRose():
 
-    def __init__(self, items):
-        self.items = items
+    def __init__(self, item):
+        self.item = item
+        print(item['name'])
+        self.name = item['name']
+        self.sell_in = int(item['sell_in'])
+        self.quality = int(item['quality'])
 
     def update_quality(self):
-        for item in self.items:
-            if item.name != "Aged Brie" and item.name != "Backstage passes to a TAFKAL80ETC concert":
-                if item.quality > 0:
-                    if item.name != "Sulfuras, Hand of Ragnaros":
-                        item.quality = item.quality - 1
-            else:
-                if item.quality < 50:
-                    item.quality = item.quality + 1
-                    if item.name == "Backstage passes to a TAFKAL80ETC concert":
-                        if item.sell_in < 11:
-                            if item.quality < 50:
-                                item.quality = item.quality + 1
-                        if item.sell_in < 6:
-                            if item.quality < 50:
-                                item.quality = item.quality + 1
-            if item.name != "Sulfuras, Hand of Ragnaros":
-                item.sell_in = item.sell_in - 1
-            if item.sell_in < 0:
-                if item.name != "Aged Brie":
-                    if item.name != "Backstage passes to a TAFKAL80ETC concert":
-                        if item.quality > 0:
-                            if item.name != "Sulfuras, Hand of Ragnaros":
-                                item.quality = item.quality - 1
-                    else:
-                        item.quality = item.quality - item.quality
+        if self.name != "Aged Brie" and self.name != "Backstage passes to a TAFKAL80ETC concert":
+            if self.quality > 0:
+                if self.name != "Sulfuras, Hand of Ragnaros":
+                    self.quality = self.quality - 1
+        else:
+            if self.quality < 50:
+                self.quality = self.quality + 1
+                if self.name == "Backstage passes to a TAFKAL80ETC concert":
+                    if self.sell_in < 11:
+                        if self.quality < 50:
+                            self.quality = self.quality + 1
+                    if self.sell_in < 6:
+                        if self.quality < 50:
+                            self.quality = self.quality + 1
+        if self.name != "Sulfuras, Hand of Ragnaros":
+            self.sell_in = self.sell_in - 1
+        if self.sell_in < 0:
+            if self.name != "Aged Brie":
+                if self.name != "Backstage passes to a TAFKAL80ETC concert":
+                    if self.quality > 0:
+                        if self.name != "Sulfuras, Hand of Ragnaros":
+                            self.quality = self.quality - 1
                 else:
-                    if item.quality < 50:
-                        item.quality = item.quality + 1
+                    self.quality = self.quality - self.quality
+            else:
+                if self.quality < 50:
+                    self.quality = self.quality + 1
 
 
 class Item:
